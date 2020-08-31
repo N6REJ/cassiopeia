@@ -265,13 +265,13 @@ class PlgSampledataBlog extends CMSPlugin
 		$articles     = array(
 			array(
 				'catid'    => $catIds[1],
-				'featured' => 0,
+				'featured' => 1,
 				'ordering' => 2,
 			),
 			array(
 				'catid'    => $catIds[1],
 				'ordering' => 1,
-				'featured' => 0,
+				'featured' => 1,
 				'access'   => 3,
 			),
 			array(
@@ -281,12 +281,12 @@ class PlgSampledataBlog extends CMSPlugin
 			),
 			array(
 				'catid'    => $catIds[0],
-				'featured' => 1,
+				'featured' => 0,
 				'ordering' => 1,
 			),
 			array(
 				'catid'    => $catIds[0],
-				'featured' => 1,
+				'featured' => 0,
 				'ordering' => 0,
 			),
 			array(
@@ -898,17 +898,35 @@ class PlgSampledataBlog extends CMSPlugin
 			),
 			array(
 				'title'    => Text::_('PLG_SAMPLEDATA_BLOG_SAMPLEDATA_MODULES_MODULE_4_TITLE'),
-				'ordering' => 5,
-				'position' => 'sidebar-right',
-				'module'   => 'mod_articles_popular',
+				'ordering' => 6,
+				'position' => 'top-a',
+				'module'   => 'mod_articles_news',
 				'params'   => array(
-					'catid'      => $catids[0],
-					'count'      => 5,
-					'show_front' => 1,
-					'layout'     => '_:default',
-					'cache'      => 1,
+					'catid'      => $catids[2],
+					'image' => 1,
+					'img_intro_full' => 'intro',
+					'item_title' => 0,
+					'link_titles' => '',
+					'item_heading' => 'h4',
+					'triggerevents' => 1,
+					'showLastSeparator' => 1,
+					'show_introtext' => 1,
+					'readmore' => 1,
+					'count' => 3,
+					'show_featured' => '',
+					'exclude_current' => 0,
+					'ordering' => 'a.publish_up',
+					'direction' => 1,
+					'layout' => '_:horizontal',
+					'moduleclass_sfx' => '',
+					'cache' => 1,
 					'cache_time' => 900,
-					'cachemode'  => 'static',
+					'cachemode' => 'itemid',
+					'style' => 'Cassiopeia-default',
+					'module_tag' => 'section',
+					'bootstrap_size' => '0',
+					'header_tag' => 'h3',
+					'header_class' => ''
 				),
 			),
 			array(
@@ -1000,7 +1018,7 @@ class PlgSampledataBlog extends CMSPlugin
 			array(
 				// Headder image
 				'title'     => Text::_('PLG_SAMPLEDATA_BLOG_SAMPLEDATA_MODULES_MODULE_8_TITLE'),
-				'content'   => '<p>' . Text::_('PLG_SAMPLEDATA_BLOG_SAMPLEDATA_MODULES_MODULE_8_TITLE') . '</p>',
+				'content'   => '<p>' . Text::_('PLG_SAMPLEDATA_BLOG_SAMPLEDATA_MODULES_MODULE_8_CONTENT') . '</p>',
 				'ordering'  => 1,
 				'position'  => 'none',
 				'module'    => 'mod_custom',
